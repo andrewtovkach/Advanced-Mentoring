@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "9eb6898e-471d-4b4e-ac6f-569d80a8879f",
+		"name": "GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImI1MGZkMTc1LTBiZDktNDI4Yy1hN2QyLTJhOTNmM2JlMGMyMCIsInN1YiI6InVzZXJAdGVzdC5jb20iLCJlbWFpbCI6InVzZXJAdGVzdC5jb20iLCJyb2xlIjoiTWFuYWdlciIsIm5iZiI6MTY0MjM0NjM3OSwiZXhwIjoxNjQyMzQ2OTc5LCJpYXQiOjE2NDIzNDYzNzl9.5GPYUKUgQ_wIjzHvGf0M_1Afbxec6ejguYRi6YKG5kczfMBmkTsP_-lKJItMvscaibYaNSvyaEZr9D3H-ykoPQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\": \"mutation ($category: categoryInput!) { createCategory (category: $category) } \", \r\n  \"variables\": { \"category\": { \"name\": \"test\", \"image\": \"test\" } } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12735/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12735",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get items by category id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImI1MGZkMTc1LTBiZDktNDI4Yy1hN2QyLTJhOTNmM2JlMGMyMCIsInN1YiI6InVzZXJAdGVzdC5jb20iLCJlbWFpbCI6InVzZXJAdGVzdC5jb20iLCJyb2xlIjoiTWFuYWdlciIsIm5iZiI6MTY0MjM0NjM3OSwiZXhwIjoxNjQyMzQ2OTc5LCJpYXQiOjE2NDIzNDYzNzl9.5GPYUKUgQ_wIjzHvGf0M_1Afbxec6ejguYRi6YKG5kczfMBmkTsP_-lKJItMvscaibYaNSvyaEZr9D3H-ykoPQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"{ items (categoryId: 6) { id name category { id name } } }\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12735/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12735",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImI1MGZkMTc1LTBiZDktNDI4Yy1hN2QyLTJhOTNmM2JlMGMyMCIsInN1YiI6InVzZXJAdGVzdC5jb20iLCJlbWFpbCI6InVzZXJAdGVzdC5jb20iLCJyb2xlIjoiTWFuYWdlciIsIm5iZiI6MTY0MjM0NjM3OSwiZXhwIjoxNjQyMzQ2OTc5LCJpYXQiOjE2NDIzNDYzNzl9.5GPYUKUgQ_wIjzHvGf0M_1Afbxec6ejguYRi6YKG5kczfMBmkTsP_-lKJItMvscaibYaNSvyaEZr9D3H-ykoPQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"{ categories { id name items { id name } } }\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12735/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12735",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImI1MGZkMTc1LTBiZDktNDI4Yy1hN2QyLTJhOTNmM2JlMGMyMCIsInN1YiI6InVzZXJAdGVzdC5jb20iLCJlbWFpbCI6InVzZXJAdGVzdC5jb20iLCJyb2xlIjoiTWFuYWdlciIsIm5iZiI6MTY0MjM0NjM3OSwiZXhwIjoxNjQyMzQ2OTc5LCJpYXQiOjE2NDIzNDYzNzl9.5GPYUKUgQ_wIjzHvGf0M_1Afbxec6ejguYRi6YKG5kczfMBmkTsP_-lKJItMvscaibYaNSvyaEZr9D3H-ykoPQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\": \"mutation ($item: itemInput!) { createItem (item: $item) } \", \r\n  \"variables\": { \"item\": { \"name\": \"test\", \"price\": 1.5, \"amount\": 10, \"categoryId\": 6 } } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12735/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12735",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImI1MGZkMTc1LTBiZDktNDI4Yy1hN2QyLTJhOTNmM2JlMGMyMCIsInN1YiI6InVzZXJAdGVzdC5jb20iLCJlbWFpbCI6InVzZXJAdGVzdC5jb20iLCJyb2xlIjoiTWFuYWdlciIsIm5iZiI6MTY0MjM0NjM3OSwiZXhwIjoxNjQyMzQ2OTc5LCJpYXQiOjE2NDIzNDYzNzl9.5GPYUKUgQ_wIjzHvGf0M_1Afbxec6ejguYRi6YKG5kczfMBmkTsP_-lKJItMvscaibYaNSvyaEZr9D3H-ykoPQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\": \"mutation ($category: categoryInput!, $categoryId: Int!) { updateCategory (category: $category, categoryId: $categoryId) } \", \r\n  \"variables\": { \"category\": { \"name\": \"test edited\", \"image\": \"test edited\" }, \"categoryId\": 6 } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12735/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12735",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImI1MGZkMTc1LTBiZDktNDI4Yy1hN2QyLTJhOTNmM2JlMGMyMCIsInN1YiI6InVzZXJAdGVzdC5jb20iLCJlbWFpbCI6InVzZXJAdGVzdC5jb20iLCJyb2xlIjoiTWFuYWdlciIsIm5iZiI6MTY0MjM0NjM3OSwiZXhwIjoxNjQyMzQ2OTc5LCJpYXQiOjE2NDIzNDYzNzl9.5GPYUKUgQ_wIjzHvGf0M_1Afbxec6ejguYRi6YKG5kczfMBmkTsP_-lKJItMvscaibYaNSvyaEZr9D3H-ykoPQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\": \"mutation ($item: itemInput!, $itemId: Int!) { updateItem (item: $item, itemId: $itemId) } \", \r\n  \"variables\": { \"item\": { \"name\": \"test edited\", \"price\": 2.5, \"amount\": 11, \"categoryId\": 6 }, \"itemId\": 3 } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12735/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12735",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImI1MGZkMTc1LTBiZDktNDI4Yy1hN2QyLTJhOTNmM2JlMGMyMCIsInN1YiI6InVzZXJAdGVzdC5jb20iLCJlbWFpbCI6InVzZXJAdGVzdC5jb20iLCJyb2xlIjoiTWFuYWdlciIsIm5iZiI6MTY0MjM0NjM3OSwiZXhwIjoxNjQyMzQ2OTc5LCJpYXQiOjE2NDIzNDYzNzl9.5GPYUKUgQ_wIjzHvGf0M_1Afbxec6ejguYRi6YKG5kczfMBmkTsP_-lKJItMvscaibYaNSvyaEZr9D3H-ykoPQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\": \"mutation ($itemId: Int!) { deleteItem (itemId: $itemId) } \", \r\n  \"variables\": { \"itemId\": 3 } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12735/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12735",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImI1MGZkMTc1LTBiZDktNDI4Yy1hN2QyLTJhOTNmM2JlMGMyMCIsInN1YiI6InVzZXJAdGVzdC5jb20iLCJlbWFpbCI6InVzZXJAdGVzdC5jb20iLCJyb2xlIjoiTWFuYWdlciIsIm5iZiI6MTY0MjM0NjM3OSwiZXhwIjoxNjQyMzQ2OTc5LCJpYXQiOjE2NDIzNDYzNzl9.5GPYUKUgQ_wIjzHvGf0M_1Afbxec6ejguYRi6YKG5kczfMBmkTsP_-lKJItMvscaibYaNSvyaEZr9D3H-ykoPQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\": \"mutation ($categoryId: Int!) { deleteCategory (categoryId: $categoryId) } \", \r\n  \"variables\": { \"categoryId\": 6 } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:12735/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "12735",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

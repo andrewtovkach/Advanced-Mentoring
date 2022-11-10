@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CartingService.API</name>
+    </assembly>
+    <members>
+        <member name="M:CartingService.Presentation.Controllers.CartsController.GetCarts">
+            <summary>
+            Gets the list of all carts.
+            </summary>
+            <returns>A list of all carts</returns>
+            <response code="200">Returns the list of all carts</response>
+        </member>
+        <member name="M:CartingService.Presentation.Controllers.CartsController.GetCartByIdV1(System.Guid)">
+            <summary>
+            Gets the particular cart.
+            </summary>
+            <returns>The particular cart</returns>
+            <param name="cartId"></param>
+            <response code="200">Returns the particular cart</response>
+            <response code="404">If the cart does not exist</response>
+        </member>
+        <member name="M:CartingService.Presentation.Controllers.CartsController.GetCartByIdV2(System.Guid)">
+            <summary>
+            Gets the list of items for the particular cart.
+            </summary>
+            <returns>The list of items for the particular cart</returns>
+            <param name="cartId"></param>
+            <response code="200">Returns the list of items for the particular cart</response>
+            <response code="404">If the cart does not exist</response>
+        </member>
+        <member name="M:CartingService.Presentation.Controllers.CartsController.CreateCart(CartingService.Contracts.CreateCartDto)">
+            <summary>
+            Creates a new cart.
+            </summary>
+            <returns>The recently created cart</returns>
+            <param name="cartForCreationDto"></param>
+            <response code="201">Returns the recently created cart</response>
+        </member>
+        <member name="M:CartingService.Presentation.Controllers.CartsController.DeleteCart(System.Guid)">
+            <summary>
+            Deletes a cart.
+            </summary>
+            <param name="cartId"></param>
+            <response code="204">If the cart was deleted</response>
+            <response code="404">If the cart does not exist</response>
+        </member>
+        <member name="M:CartingService.Presentation.Controllers.ItemsController.GetItems(System.Guid)">
+            <summary>
+            Gets the list of all items.
+            </summary>
+            <returns>A list of all items</returns>
+            <param name="cartId"></param>
+            <response code="200">Returns the list of all items</response>
+            <response code="404">If the cart does not exist</response>
+        </member>
+        <member name="M:CartingService.Presentation.Controllers.ItemsController.GetItemById(System.Guid,System.Int32)">
+            <summary>
+            Gets the particular item.
+            </summary>
+            <returns>The particular item</returns>
+            <param name="cartId"></param>
+            <param name="itemId"></param>
+            <response code="200">Returns the particular item</response>
+            <response code="404">If the cart or item does not exist</response>
+        </member>
+        <member name="M:CartingService.Presentation.Controllers.ItemsController.CreateItem(System.Guid,CartingService.Contracts.CreateItemDto)">
+            <summary>
+            Creates a new item.
+            </summary>
+            <returns>The recently created item</returns>
+            <param name="cartId"></param>
+            <param name="itemForCreationDto"></param>
+            <response code="201">Returns the recently created item</response>
+            <response code="404">If the cart does not exist</response>
+        </member>
+        <member name="M:CartingService.Presentation.Controllers.ItemsController.DeleteItem(System.Guid,System.Int32)">
+            <summary>
+            Deletes an item
+            </summary>
+            <param name="cartId"></param>
+            <param name="itemId"></param>
+            <response code="204">If the item was deleted</response>
+            <response code="404">If the cart or item does not exist</response>
+        </member>
+    </members>
+</doc>
